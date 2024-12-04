@@ -32,7 +32,11 @@ body {
 }
 
 /* Formatação comum entre os elementos. */
-header, nav, main, aside, footer {
+header,
+nav,
+main,
+aside,
+footer {
 	/* Cor do fundo. */
 	background: #a1a1a1;
 
@@ -53,8 +57,7 @@ header, nav, main, aside, footer {
 
 /* Seletores para formatação individual. */
 
-header {
-}
+header {}
 
 header #logo {
 	/* Exibição flexível.                          */
@@ -78,7 +81,8 @@ header #logo {
 	align-items: center;
 }
 
-#openMenu, #closeMenu {
+#openMenu,
+#closeMenu {
 	/* Remove a borda. */
 	border: none;
 
@@ -103,32 +107,56 @@ header #logo {
 }
 
 nav {
-	/* Alinha os itens na vertical. */
+	/* Define o contêiner como flexível */
+	display: flex;
+	/* Alinha os itens na vertical */
+	flex-direction: column;
+	/* Centraliza os itens verticalmente */
 	justify-content: center;
-
-	/* Alinha os itens na horizontal. */
+	/* Centraliza os itens horizontalmente */
 	align-items: center;
+	/* Adiciona 14% de padding nas laterais do nav */
+	padding: 0 25%;
+}
+
+nav ul {
+	/* Remove os marcadores de lista */
+	list-style: none;
+	/* Define o contêiner como flexível */
+	display: flex;
+	/* Distribui os itens igualmente com espaço entre eles */
+	justify-content: space-between;
+	/* Garante que a lista ocupe 100% da largura do contêiner */
+	width: 100%;
+	/* Remove o padding padrão da lista */
+	padding: 0;
+	/* Remove a margem padrão da lista */
+	margin: 0;
+}
+
+nav ul li {
+	/* Faz os itens crescerem para ocupar o espaço disponível */
+	flex-grow: 1;
+	/* Centraliza o texto dentro dos itens */
+	text-align: center;
 }
 
 nav a {
+
 	/* Margem de todos os lados. */
 	margin: 0 3%;
 
+
 	/* Tamanho da fonte. */
-	font-size: 15pt;
+	/* Aproximadamente 15px */
+	font-size: 1.125rem;
 }
 
-main {
+main {}
 
-}
+aside {}
 
-aside {
-
-}
-
-footer {
-
-}
+footer {}
 
 a {
 	/* Remove a decoração padrão do elemento. */
@@ -138,10 +166,12 @@ a {
 	color: inherit;
 }
 
-/* Altera o estilo dos elementos para serem apresentados */ 
+/* Altera o estilo dos elementos para serem apresentados */
 /* em telas menores que 717px. */
 @media only screen and (max-width: 717px) {
-	#openMenu, #closeMenu {
+
+	#openMenu,
+	#closeMenu {
 		/* Retorna a visibilidade padrão. */
 		display: block;
 	}
@@ -179,7 +209,7 @@ a {
 		/* Cor em RGB, mais transparência. */
 		background: rgba(255, 255, 255, 0.8);
 
-		/* Alinha os itens na vertical. */	
+		/* Alinha os itens na vertical. */
 		justify-content: center;
 
 		/* Alinha os itens na horizontal. */
